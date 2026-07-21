@@ -193,7 +193,7 @@ const ENEMY_TYPES = {
   fast: { color:"#ffaa22", points:150, hp:1, size:20, speed:2.5, shootChance:0.002 },
   tank: { color:"#cc44ff", points:250, hp:3, size:32, speed:0.7, shootChance:0.006 },
   shooter: { color:"#44ddff", points:200, hp:2, size:26, speed:0.9, shootChance:0.015 },
-  wangruixuan: { color:"#8B5E3C", points:2000, hp:20, size:55, speed:0.4, shootChance:0.05 }
+  wangruixuan: { color:"#8B5E3C", points:2000, hp:12, size:55, speed:0.4, shootChance:0.05 }
 };
 
 let particles = [], powerUps = [];
@@ -419,7 +419,7 @@ function update() {
     e.y+=e.speed; e.x+=Math.sin(frame*0.03+e.x)*(e.isBoss?1.6:1);
     e.x=Math.max(35,Math.min(W-35,e.x));
     if(e.isBoss&&e.y>H*0.35) e.y=H*0.35;
-    if(e.isBoss){if(Math.random()<e.shootChance&&e.shootCooldown<=0&&e.y>15){bossShoot(e);e.shootCooldown=13;}}
+    if(e.isBoss){if(Math.random()<e.shootChance&&e.shootCooldown<=0&&e.y>15){bossShoot(e);e.shootCooldown=20;}}
     else{if(Math.random()<e.shootChance&&e.shootCooldown<=0&&e.y>25){enemyShoot(e);e.shootCooldown=Math.floor(35-wave*2);}}
     if(e.shootCooldown>0) e.shootCooldown--;
   }
