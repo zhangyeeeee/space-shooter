@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>🚀 星际猎手 - 粑粑大王版</title>
+<title>🚀 味道大战</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body {
@@ -84,12 +84,12 @@
       <div id="joystickBase"></div>
       <div id="joystickThumb" style="left:60px;top:60px;"></div>
     </div>
-    <div id="shootBtn">发射</div>
+    <div id="shootBtn">射</div>
   </div>
 </div>
 
 <script>
-// ==================== 星际猎手 v3.0 - 移动版 ====================
+// ==================== 味道大战 v3.0 - 移动版 ====================
 const container = document.getElementById("gameContainer");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -116,7 +116,7 @@ const comboEl = document.getElementById("combo");
 const livesEl = document.getElementById("lives");
 const waveEl = document.getElementById("wave");
 
-let state = "menu", score = 0, combo = 1, lives = 3, wave = 1;
+let state = "menu", score = 0, combo = 1, lives = 5, wave = 1;
 let frame = 0, shakeAmount = 0, shakeTimer = 0;
 let bossActive = false, bossDefeatedThisWave = false;
 let floatingTexts = [];
@@ -379,7 +379,7 @@ function hitPlayer() {
 }
 
 function startGame() {
-  score=0;combo=1;lives=3;wave=1;
+  score=0;combo=1;lives=5;wave=1;
   player.x=W/2;player.y=H-80;player.invincible=60;player.power=1;
   bullets=[];enemies=[];enemyBullets=[];particles=[];powerUps=[];floatingTexts=[];
   bossActive=false;bossDefeatedThisWave=false;
@@ -473,9 +473,9 @@ function draw() {
 
   if(state==="menu"){
     ctx.fillStyle="#fff";ctx.font="bold 40px 'Microsoft YaHei',sans-serif";ctx.textAlign="center";
-    ctx.fillText("🚀 星际猎手",W/2,H/2-70);
+    ctx.fillText("🚀 味道大战",W/2,H/2-70);
     ctx.font="15px 'Microsoft YaHei',sans-serif";ctx.fillStyle="#aaccff";
-    ctx.fillText("消灭外星舰队，成为星系英雄！",W/2,H/2-20);
+    ctx.fillText("消灭粑粑军团，成为味道之王！",W/2,H/2-20);
     ctx.font="13px 'Microsoft YaHei',sans-serif";ctx.fillStyle="#8899bb";
     if(isMobile){ctx.fillText("🎮 左侧摇杆移动 · 右侧按钮发射",W/2,H/2+30);}
     else{ctx.fillText("←→↑↓/WASD 移动 · 空格发射",W/2,H/2+25);ctx.fillText("消灭敌人获得连击加分 🔥",W/2,H/2+45);}
@@ -513,7 +513,7 @@ window.addEventListener("keydown",function h(e){if((e.key===" "||e.code==="Space
 
 function loop(){update();draw();requestAnimationFrame(loop);}
 loop();
-console.log("🚀 星际猎手 v3.0 已就绪");
+console.log("🚀 味道大战 v3.0 已就绪");
 console.log("💩 开局即遭遇粑粑大王·王睿轩！");
 console.log(isMobile?"📱 移动触控模式":"🖥️ 键盘模式");
 </script>
